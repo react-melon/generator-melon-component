@@ -1,6 +1,6 @@
 {
   "name": "generator-melon-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "yo generator for melon component",
   "homepage": "https://github.com/react-melon/generator-melon-component#readme",
   "author": "leon <ludafa@outlook.com>",
@@ -18,8 +18,7 @@
   "engines": {
     "node": ">=4.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/react-melon/generator-melon-component.git"

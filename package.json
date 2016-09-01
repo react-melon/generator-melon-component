@@ -1,0 +1,38 @@
+{
+  "name": "generator-melon-component",
+  "version": "1.0.0",
+  "description": "yo generator for melon component",
+  "homepage": "https://github.com/react-melon/generator-melon-component#readme",
+  "author": "leon <ludafa@outlook.com>",
+  "files": [
+    "app",
+    "router"
+  ],
+  "main": "index.js",
+  "keywords": [
+    "generator",
+    "yo",
+    "melon-component",
+    "yeoman-generator"
+  ],
+  "engines": {
+    "node": ">=4.0"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-melon/generator-melon-component.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-melon/generator-melon-component/issues"
+  },
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "lodash": "^4.15.0",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.23.0",
+    "yosay": "^1.0.0"
+  }
+}

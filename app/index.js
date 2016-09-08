@@ -103,7 +103,7 @@ class MelonComponentGenerator extends Base {
             },
             {
                 from: 'coveralls.yml',
-                to: 'coveralls.yml'
+                to: '.coveralls.yml'
             },
             {
                 from: 'editconfig',
@@ -131,7 +131,7 @@ class MelonComponentGenerator extends Base {
             },
             {
                 from: 'travis.yml',
-                to: 'travis.yml'
+                to: '.travis.yml'
             },
             {
                 from: 'src/index.js',

@@ -12,12 +12,13 @@ module.exports = function (config) {
             {},
             karmaConfig,
             {
-                browsers: ['PhantomJS'],
-                phantomjsLauncher: {
-                    // Have phantomjs exit if a ResourceError is encountered
-                    // (useful if karma exits without killing phantom)
-                    exitOnResourceError: true
-                }
+                customLaunchers: {
+                    ChromeTravis: {
+                        base: 'Chrome',
+                        flags: ['--no-sandbox']
+                    }
+                },
+                browsers: ['ChromeTravis']
             }
         )
     );

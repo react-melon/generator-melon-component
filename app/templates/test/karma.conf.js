@@ -4,46 +4,66 @@
  */
 
 const path = require('path');
-const babelOptions = require('../package.json').babel;
-const istanbul = require('babel-istanbul');
 
 module.exports = {
 
     basePath: path.join(__dirname, '../'),
 
-    frameworks: ['jasmine', 'browserify'],
+    frameworks: ['jasmine'],
 
     files: [
         'test/spec/**/*.spec.js'
     ],
 
     browsers: [
-        'Chrome',
-        'Firefox'
+        // 'Firefox',
+        'Chrome'
     ],
 
     preprocessors: {
-        'src/**/*.js': ['browserify', 'coverage'],
-        'test/**/*.js': ['browserify']
+        'src/**/*.js': ['coverage'],
+        'test/**/*.js': ['webpack']
     },
 
-    browserify: {
-        debug: true,
-        paths: ['./src/*.js', './test/**/**.spec.js'],
-
-        transform: [
-
-            ['babelify', babelOptions],
-
-            ['browserify-istanbul', {
-                instrumenter: istanbul,
-                instrumenterConfig: {
-                    babel: babelOptions
+    webpack: {
+        module: {
+            loaders: [
+                {
+                    test: /\.js$/,
+                    loader: 'babel',
+                    exclude: /node_modules/
+                },
+                {
+                    test: /\.json$/,
+                    loader: 'json'
+                },
+                // 处理 stylus
+                {
+                    test: /\.styl$/,
+                    loader: 'style!css!stylus?paths=node_modules&resolve url&include css'
+                },
+                // 处理 iconfont
+                {
+                    test: /\.(svg|eot|ttf|woff|woff2)($|\?)/,
+                    loader: 'file'
                 }
-            }]
-        ],
-        extensions: ['.js']
+            ]
+        },
+        stylus: {
+            use: [require('nib')()]
+        },
+        devtool: 'inline-source-map',
+        externals: {
+            'react/lib/ExecutionEnvironment': true,
+            'react/lib/ReactContext': true,
+            'react/addons': true
+        }
     },
+
+    webpackMiddleware: {
+        stats: 'errors-only'
+    },
+
 
     autoWatch: true,
 
@@ -60,6 +80,6 @@ module.exports = {
     },
 
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
 
 };

@@ -46,7 +46,7 @@ check [this](https://doc.esdoc.org/github.com/react-melon/<%-projectName%>/) out
 ## Run the example
 
 ```sh
-git clone git@github.com:react-melon/<%-projectName%>.git
+git clone https://github.com/react-melon/<%-projectName%>.git
 cd <%-projectName%>
 npm install
 npm start
